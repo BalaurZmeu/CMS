@@ -16,8 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.flatpages import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('pages/', include('django.contrib.flatpages.urls')),
+    # path('pages/', include('django.contrib.flatpages.urls')),
+    path('first_page/', views.flatpage, {'url': '/first_page/'}, name='first-page'),
+    path('second_page/', views.flatpage, {'url': '/second_page/'}, name='second-page'),
 ]
