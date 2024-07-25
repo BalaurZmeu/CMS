@@ -17,12 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.flatpages import views
-from search.views import search
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.flatpage, {'url': '/'}, name='index'),
     path('second_page/', views.flatpage, {'url': '/second_page/'}, name='second-page'),
-    path('search/', search, name='search'),
 ]
